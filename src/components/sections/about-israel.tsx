@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const SIGNALS = [
   "4 Productos",
   "A Coruña",
-  "Software propio",
+  "Producto cerrado",
   "Cliente directo",
 ];
 
@@ -47,9 +47,11 @@ export function AboutIsrael() {
               cocina, sala y prospección: lo que afecta al día a día de
               restaurantes, clínicas y peluquerías.
             </p>
-            <p className="text-base text-ink-subtle">
-              Fundado por Israel, Head Chef en activo en Eurostars y emprendedor
-              tecnológico. A Coruña como base operativa.
+            <p>
+              Conocemos el dolor de la pyme porque lo tratamos: pedidos que se
+              cruzan, reseñas sin responder, hojas de cálculo que nadie acaba
+              de mantener, llamadas que llegan en el peor momento. Por eso los
+              productos no parten de una hipótesis: parten de una rutina vivida.
             </p>
           </motion.div>
 

@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 
 const CLAIMS = [
-  "Head Chef en activo",
+  "Dentro del problema",
   "A Coruña como base",
   "Precio claro",
   "Producto directo",
