@@ -32,8 +32,8 @@ export function HeaderPill() {
         <a href="#por-que" className="transition-colors hover:text-ink">
           Por qué
         </a>
-        <a href="#israel" className="transition-colors hover:text-ink">
-          Israel
+        <a href="#estudio" className="transition-colors hover:text-ink">
+          Estudio
         </a>
       </nav>
 

@@ -34,8 +34,8 @@ export function Hero() {
           transition={{ delay: 0.68, duration: 0.68, ease: HERO_EASE }}
         >
           <p className="max-w-[44ch] text-lg leading-[1.55] text-ink-muted sm:text-xl">
-            Software para reseñas, cocina, sala y pyme española. Israel lo
-            prueba donde trabaja: turnos reales, poco margen y cero tiempo para
+            Software para reseñas, cocina, sala y pyme española. Lo probamos
+            donde se trabaja: turnos reales, poco margen y cero tiempo para
             herramientas que estorban. Primero lo usamos. Después lo vendemos.
           </p>
 

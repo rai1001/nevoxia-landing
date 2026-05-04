@@ -2,95 +2,81 @@
 
 import { motion } from "motion/react";
 
-const STAMPS = ["47", "A Coruña", "Head Chef en activo", "Tech entrepreneur"];
+const SIGNALS = [
+  "4 Productos",
+  "A Coruña",
+  "Software propio",
+  "Cliente directo",
+];
+
+const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 
 export function AboutIsrael() {
   return (
-    <section id="israel" className="px-6 py-32 sm:px-12">
+    <section id="estudio" className="px-6 py-32 sm:px-12">
       <div className="mx-auto max-w-7xl">
         <motion.div
-          className="mb-12"
+          className="mb-12 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="eyebrow">Israel // Head Chef</span>
+          <span className="eyebrow">Estudio // A Coruña</span>
+          <h2 className="font-display mt-3 text-4xl font-extrabold leading-[0.94] tracking-[-0.04em] text-ink sm:text-7xl">
+            Estudio operativo, no observador.
+          </h2>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-[auto,1fr] lg:items-end">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr,1fr] lg:items-start">
           <motion.div
-            className="font-display text-[clamp(8rem,22vw,22rem)] font-black leading-[0.8] tracking-[-0.08em] text-ink"
-            initial={{ scale: 0.94, opacity: 0, y: 22 }}
-            whileInView={{ scale: 1, opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{
-              type: "spring",
-              stiffness: 220,
-              damping: 24,
-              bounce: 0.16,
-            }}
+            className="space-y-6 text-lg leading-[1.55] text-ink-muted"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: REVEAL_EASE }}
           >
-            47.
+            <p>
+              Nevoxia es un estudio independiente de software para pyme
+              española. No vende horas, ni reuniones, ni propuestas a medida.
+              Vende productos cerrados, con precio claro y entrada directa.
+            </p>
+            <p>
+              Cada producto resuelve una tarea concreta y se construye desde
+              dentro de un negocio real, no desde una sala de pitch. Reseñas,
+              cocina, sala y prospección: lo que afecta al día a día de
+              restaurantes, clínicas y peluquerías.
+            </p>
+            <p className="text-base text-ink-subtle">
+              Fundado por Israel, Head Chef en activo en Eurostars y emprendedor
+              tecnológico. A Coruña como base operativa.
+            </p>
           </motion.div>
 
-          <div className="max-w-xl">
-            <motion.h2
-              className="font-display text-3xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-            >
-              Un Head Chef escribiendo software.
-            </motion.h2>
-            <motion.p
-              className="mt-6 text-base text-ink-muted sm:text-lg"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              Israel tiene 47 años, vive en A Coruña y sigue en activo como Head
-              Chef en Eurostars. Eso cambia el tipo de software que construye.
-              Sabe lo que pasa cuando una herramienta promete ahorrar tiempo
-              pero pide más pasos. Sabe que un buen sistema no debe hacerse
-              notar más que el problema que resuelve. Nevoxia nace de esa
-              mezcla: turno, código y pyme española.
-            </motion.p>
-          </div>
+          <motion.div
+            className="space-y-2 rounded-3xl border border-border-strong bg-bg-elevated p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: REVEAL_EASE }}
+          >
+            <span className="eyebrow">Señales // Estudio</span>
+            <ul className="mt-6 divide-y divide-border">
+              {SIGNALS.map((s, i) => (
+                <li
+                  key={s}
+                  className="flex items-baseline justify-between py-3 font-mono text-xs uppercase tracking-[0.18em] text-ink"
+                >
+                  <span className="text-ink-subtle">0{i + 1}</span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="eyebrow mt-8 text-ink">
+              Primero // Dentro &nbsp;·&nbsp; Después // Producto
+            </p>
+          </motion.div>
         </div>
-
-        <div className="mt-16 flex flex-wrap gap-3">
-          {STAMPS.map((stamp, i) => (
-            <motion.span
-              key={stamp}
-              className="rounded-full border border-border-strong px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-ink"
-              initial={{ scale: 0.94, opacity: 0, y: 22 }}
-              whileInView={{ scale: 1, opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{
-                delay: 0.1 * i,
-                type: "spring",
-                stiffness: 220,
-                damping: 24,
-                bounce: 0.16,
-              }}
-            >
-              {stamp}
-            </motion.span>
-          ))}
-        </div>
-
-        <motion.p
-          className="eyebrow mt-16 text-ink"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          Primero // Dentro &nbsp;·&nbsp; Después // Producto
-        </motion.p>
       </div>
     </section>
   );

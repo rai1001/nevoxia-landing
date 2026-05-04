@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const PILLARS = [
   {
     eyebrow: "Operador // No observador",
-    body: "Israel trabaja donde los problemas aparecen, no donde se presentan.",
+    body: "Trabajamos donde los problemas aparecen, no donde se presentan.",
   },
   {
     eyebrow: "Precio // Claro",
