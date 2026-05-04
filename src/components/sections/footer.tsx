@@ -35,8 +35,8 @@ export function Footer() {
           </FooterColumn>
 
           <FooterColumn title="Legal">
-            <FooterLink href="#" disabled>Privacidad</FooterLink>
-            <FooterLink href="#" disabled>Aviso legal</FooterLink>
+            <FooterLink href="/legal/privacidad">Privacidad</FooterLink>
+            <FooterLink href="/legal/aviso-legal">Aviso legal</FooterLink>
           </FooterColumn>
         </div>
 
