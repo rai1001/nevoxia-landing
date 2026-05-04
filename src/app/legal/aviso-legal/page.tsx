@@ -27,14 +27,10 @@ export default function AvisoLegalPage() {
           1. Titular del sitio
         </h2>
         <ul className="space-y-2">
-          <li>Titular: <strong className="text-ink">Israel Méndez Vázquez</strong></li>
-          <li>NIF: <span className="font-mono text-sm text-ink-subtle">[PENDIENTE — añadir antes de publicar]</span></li>
-          <li>Domicilio a efectos de notificaciones: <span className="font-mono text-sm text-ink-subtle">[PENDIENTE — A Coruña, dirección completa]</span></li>
-          <li>Correo electrónico: <a className="text-accent hover:underline" href="mailto:hola@reseabot.es">hola@reseabot.es</a></li>
-          <li>
-            Nombre comercial: <strong className="text-ink">Nevoxia</strong> (estudio
-            de software, sin razón social independiente).
-          </li>
+          <li>Titular: Israel Méndez Vázquez</li>
+          <li>NIF: 47354514K</li>
+          <li>Domicilio a efectos de notificaciones: C/ Falperra, 38 · 15005 A Coruña</li>
+          <li>Correo electrónico: <a className="text-accent hover:underline" href="mailto:contacto@nevoxia.es">contacto@nevoxia.es</a></li>
         </ul>
 
         <h2 className="font-display pt-6 text-2xl font-bold tracking-tight text-ink">
@@ -102,8 +98,8 @@ export default function AvisoLegalPage() {
         </h2>
         <p>
           Para cualquier consulta sobre este aviso legal, puedes escribir a{" "}
-          <a className="text-accent hover:underline" href="mailto:hola@reseabot.es">
-            hola@reseabot.es
+          <a className="text-accent hover:underline" href="mailto:contacto@nevoxia.es">
+            contacto@nevoxia.es
           </a>
           .
         </p>

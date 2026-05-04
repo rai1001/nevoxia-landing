@@ -29,12 +29,18 @@ export default function PrivacidadPage() {
         <h2 className="font-display pt-6 text-2xl font-bold tracking-tight text-ink">
           1. Responsable del tratamiento
         </h2>
-        <ul className="space-y-2">
-          <li>Responsable: <strong className="text-ink">Israel Méndez Vázquez</strong></li>
-          <li>NIF: <span className="font-mono text-sm text-ink-subtle">[PENDIENTE — añadir antes de publicar]</span></li>
-          <li>Domicilio: <span className="font-mono text-sm text-ink-subtle">[PENDIENTE — A Coruña, dirección completa]</span></li>
-          <li>Correo electrónico: <a className="text-accent hover:underline" href="mailto:hola@reseabot.es">hola@reseabot.es</a></li>
-        </ul>
+        <p>
+          El responsable del tratamiento es el titular del sitio, cuyos datos
+          identificativos figuran en el{" "}
+          <a className="text-accent hover:underline" href="/legal/aviso-legal">
+            aviso legal
+          </a>
+          . Para cualquier asunto relativo a esta política, puedes contactar en{" "}
+          <a className="text-accent hover:underline" href="mailto:contacto@nevoxia.es">
+            contacto@nevoxia.es
+          </a>
+          .
+        </p>
 
         <h2 className="font-display pt-6 text-2xl font-bold tracking-tight text-ink">
           2. Datos que recogemos
@@ -46,8 +52,8 @@ export default function PrivacidadPage() {
         </p>
         <p>
           Si decides escribir voluntariamente al correo de contacto
-          <a className="text-accent hover:underline" href="mailto:hola@reseabot.es">
-            {" "}hola@reseabot.es
+          <a className="text-accent hover:underline" href="mailto:contacto@nevoxia.es">
+            {" "}contacto@nevoxia.es
           </a>
           , trataremos tu dirección de correo y el contenido de tu mensaje con
           el único fin de responder a tu consulta. La base legal es el interés
@@ -86,7 +92,7 @@ export default function PrivacidadPage() {
         </p>
         <p>
           El correo de contacto se gestiona a través del servicio de correo
-          asociado al dominio reseabot.es (proveedor: Arsys Internet S.L.).
+          asociado al dominio nevoxia.es (proveedor: Arsys Internet S.L.).
         </p>
 
         <h2 className="font-display pt-6 text-2xl font-bold tracking-tight text-ink">
@@ -96,8 +102,8 @@ export default function PrivacidadPage() {
           Puedes ejercer en cualquier momento los derechos de acceso,
           rectificación, supresión, oposición, limitación del tratamiento y
           portabilidad de tus datos personales. Para hacerlo, escribe a{" "}
-          <a className="text-accent hover:underline" href="mailto:hola@reseabot.es">
-            hola@reseabot.es
+          <a className="text-accent hover:underline" href="mailto:contacto@nevoxia.es">
+            contacto@nevoxia.es
           </a>{" "}
           indicando el derecho que deseas ejercer.
         </p>

@@ -30,7 +30,7 @@ export function Footer() {
           <FooterColumn title="Estudio">
             <FooterLink href="#por-que">Por qué Nevoxia</FooterLink>
             <FooterLink href="#estudio">El estudio</FooterLink>
-            <FooterLink href="mailto:hola@reseabot.es">hola@reseabot.es</FooterLink>
+            <FooterLink href="mailto:contacto@nevoxia.es">contacto@nevoxia.es</FooterLink>
             <FooterLink href="#" disabled>A Coruña, España</FooterLink>
           </FooterColumn>
 

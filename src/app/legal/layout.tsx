@@ -3,7 +3,20 @@ import { HeaderPill } from "@/components/header-pill";
 import { Footer } from "@/components/sections/footer";
 
 export const metadata: Metadata = {
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    noarchive: true,
+    nosnippet: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noarchive: true,
+      nosnippet: true,
+      "max-snippet": 0,
+      "max-image-preview": "none",
+    },
+  },
 };
 
 export default function LegalLayout({ children }: { children: React.ReactNode }) {
