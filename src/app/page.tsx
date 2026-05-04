@@ -2,7 +2,7 @@ import { HeaderPill } from "@/components/header-pill";
 import { Hero } from "@/components/sections/hero";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { Products } from "@/components/sections/products";
-import { Approach } from "@/components/sections/approach";
+import { WhyNevoxia } from "@/components/sections/why-nevoxia";
 import { AboutIsrael } from "@/components/sections/about-israel";
 import { CtaBlack } from "@/components/sections/cta-black";
 import { Footer } from "@/components/sections/footer";
@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
         <TrustStrip />
         <Products />
-        <Approach />
+        <WhyNevoxia />
         <AboutIsrael />
         <CtaBlack />
       </main>

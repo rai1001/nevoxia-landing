@@ -1,0 +1,5 @@
+Nevoxia es un estudio de software de A Coruña fundado por Israel, Head Chef en activo y emprendedor tech.
+Nevoxia vende productos de software cerrados y de contratación directa para pymes españolas.
+Su producto principal es ReseaBot, que responde reseñas de Google con la voz del negocio y aprobación por WhatsApp.
+Nevoxia también desarrolla ChefOS, RestoOS y ProspectOS para operativa F&B, restaurante y prospección.
+Posicionamiento: software construido primero para problemas que el fundador conoce de primera mano.

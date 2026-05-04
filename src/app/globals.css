@@ -1,86 +1,125 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *));
+/* Theme switching via data-theme attribute on <html>.
+   Tri-state managed in JS: "system" | "light" | "dark".
+   Resolved value (light|dark) is written to data-theme. */
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Sistema de variables Nevoxia — provisional hasta output GPT.
-   Reglas: light = default (audiencia pyme mainstream).
-   Dark = toggle opt-in. Variables coordinadas, no inversas simples. */
-
+/* Paleta A Light — default. Sobria, cálida, mainstream pyme. */
 :root {
-  /* Fondos */
-  --bg: #f5f5f5;
-  --bg-elevated: #ffffff;
-  --bg-anchor: #0a0a0a;
+  color-scheme: light;
 
-  /* Texto */
-  --fg: #0a0a0a;
-  --fg-muted: #525252;
-  --fg-subtle: #737373;
-  --fg-on-anchor: #f5f5f5;
+  --bg: #f6f4ee;          /* comanda — cálido limpio */
+  --bg-elevated: #fffaf0;  /* card light */
+  --bg-strip: #fff9ea;     /* trust strip */
+  --bg-soft: #eef4ef;      /* why nevoxia */
+  --bg-anchor: #11110f;    /* CTA negro / labels fuertes */
 
-  /* Bordes y separadores */
-  --border: #e5e5e5;
-  --border-strong: #d4d4d4;
+  --ink: #141311;          /* tinta carbón suave */
+  --ink-muted: #4a4845;
+  --ink-subtle: #6b6964;
+  --ink-on-anchor: #f6f4ee;
 
-  /* Acento provisional (revisar con output GPT) */
-  --accent: #d97706;
+  --border: rgba(20, 19, 17, 0.12);
+  --border-strong: rgba(20, 19, 17, 0.22);
+
+  --accent: #c75a36;       /* brasa/terracota */
   --accent-fg: #ffffff;
+  --accent-2: #2e6f5e;     /* verde laurel/Atlántico */
 }
 
-.dark {
-  --bg: #0a0a0a;
-  --bg-elevated: #171717;
-  --bg-anchor: #f5f5f5;
+/* Paleta A Dark — coordinada con la A Light. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
 
-  --fg: #f5f5f5;
-  --fg-muted: #a3a3a3;
-  --fg-subtle: #737373;
-  --fg-on-anchor: #0a0a0a;
+  --bg: #151310;
+  --bg-elevated: #1c1a16;
+  --bg-strip: #1a1814;
+  --bg-soft: #181a17;
+  --bg-anchor: #f6f4ee;    /* En dark el "anchor" es claro */
 
-  --border: #262626;
-  --border-strong: #404040;
+  --ink: #f6f4ee;
+  --ink-muted: #b9b6ae;
+  --ink-subtle: #8a8780;
+  --ink-on-anchor: #11110f;
 
-  --accent: #fbbf24;
-  --accent-fg: #0a0a0a;
+  --border: rgba(246, 244, 238, 0.12);
+  --border-strong: rgba(246, 244, 238, 0.22);
+
+  --accent: #e17755;       /* brasa más clara */
+  --accent-fg: #11110f;
+  --accent-2: #82b5a6;     /* verde laurel iluminado */
 }
 
+/* Tailwind tokens */
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-elevated: var(--bg-elevated);
+  --color-bg-strip: var(--bg-strip);
+  --color-bg-soft: var(--bg-soft);
   --color-bg-anchor: var(--bg-anchor);
-  --color-fg: var(--fg);
-  --color-fg-muted: var(--fg-muted);
-  --color-fg-subtle: var(--fg-subtle);
-  --color-fg-on-anchor: var(--fg-on-anchor);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-ink-on-anchor: var(--ink-on-anchor);
+
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
+
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
+  --color-accent-2: var(--accent-2);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-geist);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Base */
 html, body {
   background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Microcopy CAPS estilo Front Yard: PRODUCTO // CATEGORIA */
+/* Theme transition: smooth bg + color when toggling */
+html, body {
+  transition: background-color 0.46s cubic-bezier(0.76, 0, 0.24, 1),
+              color 0.46s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Display = Geist for hero + section titles */
+.font-display {
+  font-family: var(--font-display), "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.04em;
+}
+
+/* Microcopy CAPS estilo ticket: ETIQUETA // ETIQUETA */
 .eyebrow {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: var(--ink-muted);
 }
 
-/* Selección coherente con paleta */
 ::selection {
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+  }
 }
